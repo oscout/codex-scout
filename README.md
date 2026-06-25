@@ -12,8 +12,8 @@ Repository: <https://github.com/arach/codex-scout>
 ## Included Plugins
 
 - `scout`: a Codex plugin that launches the Scout MCP server and includes a
-  Scout coordination skill for agent discovery, direct messages, and ask-style
-  invocations.
+  Scout coordination skill for agent discovery, direct messages, asks, session
+  continuity, and work updates.
 
 ## Install Locally
 
@@ -56,8 +56,9 @@ Launch behavior:
 
 - prefers a locally installed `scout` CLI
 - falls back to `bunx @openscout/scout`
-- defaults `OPENSCOUT_SETUP_CWD` to `$HOME` when the host has not already set a
-  Scout context root
+- defaults `OPENSCOUT_SETUP_CWD` from Codex/workspace environment variables or
+  `$PWD` when the host has not already set a Scout context root
+- uses `$HOME` only as the last fallback
 
 Advanced overrides:
 
