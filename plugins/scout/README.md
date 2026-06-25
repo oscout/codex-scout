@@ -10,7 +10,7 @@ What it provides:
 
 - a Codex plugin manifest so Scout can show up in the plugin catalog
 - an MCP manifest that launches `scout mcp`
-- a bundled Scout coordination skill so Codex knows when to search, resolve, send, and ask
+- a bundled Scout coordination skill so Codex knows when to search, resolve, send, ask, and update work
 
 ## Install
 
@@ -30,7 +30,8 @@ Launch behavior:
 
 - prefers a locally installed `scout` CLI
 - falls back to `bunx @openscout/scout`
-- defaults `OPENSCOUT_SETUP_CWD` to `$HOME` when the host has not already set a Scout context root
+- defaults `OPENSCOUT_SETUP_CWD` from Codex/workspace environment variables or `$PWD` when the host has not already set a Scout context root
+- uses `$HOME` only as the last fallback
 
 Advanced overrides:
 

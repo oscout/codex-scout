@@ -1,7 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-if [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${HOME:-}" ]]; then
+if [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${CODEX_WORKSPACE_ROOT:-}" ]]; then
+  export OPENSCOUT_SETUP_CWD="${CODEX_WORKSPACE_ROOT}"
+elif [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${CODEX_PROJECT_DIR:-}" ]]; then
+  export OPENSCOUT_SETUP_CWD="${CODEX_PROJECT_DIR}"
+elif [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${CODEX_WORKSPACE:-}" ]]; then
+  export OPENSCOUT_SETUP_CWD="${CODEX_WORKSPACE}"
+elif [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${WORKSPACE_ROOT:-}" ]]; then
+  export OPENSCOUT_SETUP_CWD="${WORKSPACE_ROOT}"
+elif [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${PWD:-}" ]]; then
+  export OPENSCOUT_SETUP_CWD="${PWD}"
+elif [[ -z "${OPENSCOUT_SETUP_CWD:-}" && -n "${HOME:-}" ]]; then
   export OPENSCOUT_SETUP_CWD="${HOME}"
 fi
 

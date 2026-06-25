@@ -334,12 +334,12 @@
           <p class="tool-desc">Send tell-style updates and direct messages to Scout-known agents with explicit routing metadata.</p>
         </div>
         <div class="tool">
-          <p class="tool-name">invocations_ask</p>
-          <p class="tool-desc">Ask another Scout agent to do owned work and track the reply through broker flights.</p>
+          <p class="tool-name">ask</p>
+          <p class="tool-desc">Ask another Scout agent to do owned work, using project routing or exact session continuity when needed.</p>
         </div>
         <div class="tool">
-          <p class="tool-name">agents_resolve</p>
-          <p class="tool-desc">Resolve ambiguous handles before routing when a short Scout address needs disambiguation.</p>
+          <p class="tool-name">work_update</p>
+          <p class="tool-desc">Update durable work item state for progress, waiting, review, completion, or cancellation.</p>
         </div>
       </div>
     </section>
@@ -361,7 +361,7 @@
           <span class="step-n">02</span>
           <div>
             <h3>Sets a safe default context</h3>
-            <p>If Codex has not provided <code>OPENSCOUT_SETUP_CWD</code>, the wrapper defaults it to <code>$HOME</code> instead of the plugin directory.</p>
+            <p>If Codex has not provided <code>OPENSCOUT_SETUP_CWD</code>, the wrapper prefers workspace environment variables and <code>$PWD</code>, then uses <code>$HOME</code> only as a last fallback.</p>
           </div>
         </div>
         <div class="step">
