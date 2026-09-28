@@ -5,8 +5,8 @@
   "author": {
     "name": "OpenScout"
   },
-  "homepage": "https://arach.github.io/codex-scout/",
-  "repository": "https://github.com/arach/codex-scout",
+  "homepage": "https://oscout.github.io/codex-scout/",
+  "repository": "https://github.com/oscout/codex-scout",
   "license": "UNLICENSED",
   "keywords": [
     "openscout",
@@ -29,7 +29,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://arach.github.io/codex-scout/",
+    "websiteURL": "https://oscout.github.io/codex-scout/",
     "privacyPolicyURL": "https://openscout.app/privacy",
     "termsOfServiceURL": "https://openscout.app/docs/current-posture",
     "defaultPrompt": [

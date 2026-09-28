@@ -5,9 +5,9 @@ integration. The repository is named `codex-scout`; the Codex-facing plugin is
 named `scout` so Scout appears as the short, product-level integration inside
 Codex.
 
-Website: <https://arach.github.io/codex-scout/>
+Website: <https://oscout.github.io/codex-scout/>
 
-Repository: <https://github.com/arach/codex-scout>
+Repository: <https://github.com/oscout/codex-scout>
 
 ## Included Plugins
 
@@ -36,7 +36,7 @@ enabled = true
 ## Install From GitHub
 
 ```text
-/plugin marketplace add arach/codex-scout
+/plugin marketplace add oscout/codex-scout
 ```
 
 The marketplace declares the `scout` plugin as installed by default. If your

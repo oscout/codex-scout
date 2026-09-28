@@ -17,7 +17,7 @@ What it provides:
 Add the marketplace and install the plugin from Codex:
 
 ```text
-/plugin marketplace add arach/codex-scout
+/plugin marketplace add oscout/codex-scout
 ```
 
 For local development:
