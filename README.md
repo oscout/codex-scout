@@ -1,58 +1,72 @@
-# Codex Scout
+<p>
+  <a href="https://openscout.app">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/scout-lockup-light.svg" />
+      <img src="assets/scout-lockup-ink.svg" alt="Scout" height="28" />
+    </picture>
+  </a>
+</p>
 
-This repository contains the Codex plugin marketplace for OpenScout's Codex
-integration. The repository is named `codex-scout`; the Codex-facing plugin is
-named `scout` so Scout appears as the short, product-level integration inside
-Codex.
+# Scout for Codex
 
-Website: <https://oscout.github.io/codex-scout/>
+Request a review or hand off work from Codex, follow the result, and continue the same work.
 
-Repository: <https://github.com/oscout/codex-scout>
+[Website](https://oscout.github.io/codex-scout/) · [Install](#install) · [First ask](#first-ask) · [OpenScout](https://openscout.app) · [All integrations](https://github.com/oscout)
 
-## Included Plugins
+<!-- scout-illustration:start -->
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/scout-illustration-dark.svg" />
+    <img src="assets/scout-illustration-light.svg" alt="Scout connects to a Codex work thread with a review task and code diff." width="100%" />
+  </picture>
+</p>
+<p align="center"><em>Request a review, follow its result, and continue the same work.</em></p>
+<!-- scout-illustration:end -->
 
-- `scout`: a Codex plugin that launches the Scout MCP server and includes a
-  Scout coordination skill for agent discovery, direct messages, asks, session
-  continuity, and work updates.
+## Install
 
-## Install Locally
-
-From Codex, add this repository as a local plugin marketplace:
-
-For local development, point Codex at this checkout:
-
-```text
-/plugin marketplace add /Users/arach/dev/codex-scout
-```
-
-Codex records marketplaces in `~/.codex/config.toml`. If the plugin does not
-appear in your next session after adding the marketplace, enable it explicitly:
-
-```toml
-[plugins."scout@openscout"]
-enabled = true
-```
-
-## Install From GitHub
+From Codex:
 
 ```text
 /plugin marketplace add oscout/codex-scout
 ```
 
 The marketplace declares the `scout` plugin as installed by default. If your
-Codex build only adds the marketplace and does not enable the plugin, add this
-entry to `~/.codex/config.toml`:
+Codex build only adds the marketplace and the plugin does not appear in your
+next session, enable it in `~/.codex/config.toml`:
 
 ```toml
 [plugins."scout@openscout"]
 enabled = true
 ```
 
-## Plugin Behavior
+For local development, point Codex at a checkout instead:
 
-The plugin starts Scout's MCP server through `scripts/run-scout-mcp.sh`.
+```text
+/plugin marketplace add /absolute/path/to/codex-scout
+```
 
-Launch behavior:
+## First ask
+
+Ask in plain language from a Codex session:
+
+```text
+Use Scout to ask a Claude agent in /path/to/repo to review this diff.
+Keep the returned work handle for follow-up.
+```
+
+The bundled Scout skill routes fresh work by project and harness, then
+continues by the returned handle instead of guessing agent names.
+
+## What it adds
+
+- **The Scout MCP server**, launched by the `scout` plugin.
+- **A Scout coordination skill** for agent discovery, direct messages, asks,
+  session continuity, and work updates.
+
+## How it works
+
+The plugin starts Scout's MCP server through `scripts/run-scout-mcp.sh`, which:
 
 - prefers a locally installed `scout` CLI
 - falls back to `bunx @openscout/scout`
@@ -65,13 +79,13 @@ Advanced overrides:
 - set `OPENSCOUT_SETUP_CWD` to force Scout's default workspace root
 - set `OPENSCOUT_MCP_BIN` to force a specific Scout executable
 
-## Website
+## Requirements
 
-The static project page lives at [`docs/index.html`](./docs/index.html). GitHub
-Pages can serve it from the `docs/` folder on `main`.
+- A local OpenScout broker
+- The `scout` CLI, or Bun so the wrapper can run `bunx @openscout/scout`
 
 ## Notes
 
-This is an experimental local developer package. It depends on a local
-OpenScout broker and a `scout` CLI, or Bun so the wrapper can run
-`bunx @openscout/scout`.
+This is an experimental local developer package. The project page lives at
+[`docs/index.html`](./docs/index.html) and is served by GitHub Pages from the
+`docs/` folder on `main`.
